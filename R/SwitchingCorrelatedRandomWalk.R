@@ -156,7 +156,7 @@ scrw = function(data,
   if (mode) {
     Res$alpha = alpha <- rep$value[names(rep$value) == "alpha"]
     Res$phi = rep$value[names(rep$value) == "phi"]
-    Res$mean_p = as.numeric(-(1-alpha[2])/(alpha[1]+alpha[2]-2))
+    Res$det_p = as.numeric((1-alpha[2])/(2-alpha[1]-alpha[2]))
   } else {
     Res$alpha <- Res$phi <- Res$mean_p <- NULL
   }
