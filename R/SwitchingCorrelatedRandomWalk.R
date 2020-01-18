@@ -19,6 +19,34 @@ NULL
 #' @param logit_p_init initial value for logit_p
 #' @param phase the number of phase estimation when mode=TRUE
 #' @encoding UTF-8
+#' @examples
+#' \dontrun{
+#' model = scrw(data,mode =TRUE,gamma_fix = c(1,0),theta_fix = c(-1,0))
+#' }
+#' @return list of elements below
+#' \describe{
+#' \item{\code{input}}{used argument}
+#' \item{\code{opt}}{\code{nlminb} object}
+#' \item{\code{MakeADFun}}{\code{TMB::MakeADFun} object}
+#' \item{\code{rep}}{\code{TMB::sdreport} object}
+#' \item{\code{par_list}}{list of all parameters}
+#' \item{\code{x}}{estimated location}
+#' \item{\code{p}}{probability of migration mode}
+#' \item{\code{alpha}}{probability of the same mode (migration or staying) at a next step}
+#' \item{\code{phi}}{process error of binomial distribution (fixed at \code{phi=1} when \code{overdispersion=FALSE})}
+#' \item{\code{det_p}}{deterministic probability of migration mode}
+#' \item{\code{gamma}}{auto-corrlation coefficient for each mode; \code{0<=gamma<=1}}
+#' \item{\code{theta}}{angle for each mode}
+#' \item{\code{sigma}}{process error of random walk}
+#' \item{\code{rho}}{correlation coefficient in process error between longitudinal and latitudinal directions}
+#' \item{\code{omega}}{magnitude of observation error in normal distribution}
+#' \item{\code{loglik}}{log-likelihood}
+#' \item{\code{k}}{number of fixed parameters}
+#' \item{\code{AIC}}{AIC}
+#' \item{\code{AICc}}{AICc (sample size is assumed to be time-series x 2)}
+#' \item{\code{BIC}}{BIC (sample size is assumed to be time-series x 2)}
+#' }
+
 #' @export
 scrw = function(data,
                 mode = FALSE, # if TRUE, immigration mode and staying mode
