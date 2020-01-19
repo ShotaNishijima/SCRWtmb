@@ -7,7 +7,7 @@
 \usage{
 use_scrw_tmb(
   TmbFile = "scrw",
-  CppDir = system.file("executable", package = "SCRWtmb"),
+  CppDir = system.file("inst/executable", package = "SCRWtmb"),
   RunDir = getwd(),
   overwrite = FALSE
 )

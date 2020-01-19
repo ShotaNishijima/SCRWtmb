@@ -1,3 +1,9 @@
+### example code for SCRWtmb ### ----
+
+#
+# load_all("~/git/SCRWtmb")
+# check()
+#
 
 devtools::install_github("ShotaNishijima/SCRWtmb")
 library(SCRWtmb)

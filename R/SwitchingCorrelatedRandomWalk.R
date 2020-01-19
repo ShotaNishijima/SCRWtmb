@@ -231,7 +231,7 @@ scrw = function(data,
 #' @export
 
 use_scrw_tmb <- function(TmbFile = "scrw",
-                         CppDir = system.file("executable",package="SCRWtmb"),
+                         CppDir = system.file("inst/executable",package="SCRWtmb"),
                          RunDir = getwd(),
                          overwrite = FALSE) {
   if (!requireNamespace("TMB", quietly = TRUE)) {
